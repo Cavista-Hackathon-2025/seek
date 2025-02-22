@@ -17,7 +17,7 @@ const Dashboard = () => {
         <p className='text-[22px] font-medium max-w-[489px] my-20 text-center '>Scan, search, or chat with Seek to get instant insights on your products.</p>
 
         <div className='flex items-center gap-8'>
-            {actioncarddata.map(card => <ActionCard {...card}/>)}
+            {actioncarddata.map(card => <ActionCard {...card} />)}
         </div>
         <SearchProduct />
     </section>
