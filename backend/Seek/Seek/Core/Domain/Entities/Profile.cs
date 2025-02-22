@@ -13,7 +13,8 @@ namespace Seek.Core.Domain.Entities
         public DateTime DateOfBirth { get; set; }
         public string Nationality { get; set; } = default!;
         public string? DietType { get; set; } = default!;
-
+        public string SkinType { get; set; } = default!;
+        public bool Reminder { get; set; } = false;
         [NotMapped]
         public ICollection<string> Allergies
         {

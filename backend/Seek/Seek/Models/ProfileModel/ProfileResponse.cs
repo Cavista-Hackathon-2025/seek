@@ -9,6 +9,7 @@ namespace Seek.Models.ProfileModel
         public int Height { get; set; } = default!;
         public int Weight { get; set; } = default!;
         public int Age { get; set; } = default!;
+        public string? SkinType { get; set; } = default!;
         public DateTime DateOfBirth { get; set; }
         public string Nationality { get; set; } = default!;
         public string Email { get; set; } = default!;

@@ -24,6 +24,7 @@ namespace Seek.Models.ProfileModel
         [Required]
         public string Nationality { get; set; } = default!;
         public string? DietType { get; set; } = default!;
+        public string? SkinType { get; set; } = default!;
         public ICollection<string> Allergies { get; set; } = new HashSet<string>();
         public ICollection<string> UserGoals { get; set; } = new HashSet<string>();
     }

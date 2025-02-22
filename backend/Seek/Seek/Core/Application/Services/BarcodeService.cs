@@ -2,13 +2,14 @@
 using System.IO;
 using System.Net.Http;
 using System.Text.Json;
-using Google.Cloud.Vision.V1;
+using OpenAI_API.Chat;
+using OpenAI_API;
 using Seek.Core.Application.Interface.Services;
-using Seek.Models.UserModel;
+using Seek.Core.Domain.Entities;
 using ZXing;
 using ZXing.Common;
-using static Google.Apis.Requests.BatchRequest;
-using Image = Google.Cloud.Vision.V1.Image;
+using Seek.Core.Application.Interface.Repositories;
+using System.Text.Json.Serialization;
 
 public class BarcodeService : IBarcodeService
 {
@@ -16,15 +17,19 @@ public class BarcodeService : IBarcodeService
     private readonly HashSet<string> _allowedExtensions = new() { ".jpg", ".jpeg", ".png" };
     private readonly string _apiKey;
     private readonly string _baseUrl;
+    private IProfileRepository _profileRepository;
+    private readonly IConfiguration _configuration;
 
 
     private readonly string _credentialsPath;
 
-    public BarcodeService(IConfiguration configuration, HttpClient httpClient)
+    public BarcodeService(IConfiguration configuration, HttpClient httpClient, IProfileRepository profileRepository  )
     {
         _httpClient = httpClient;
         _apiKey = configuration["UPCService:ApiKey"];
         _baseUrl = configuration["UPCService:BaseUrl"];
+        _profileRepository = profileRepository;
+        _configuration = configuration;
 
         if (string.IsNullOrWhiteSpace(_apiKey) || string.IsNullOrWhiteSpace(_baseUrl))
         {
@@ -32,7 +37,7 @@ public class BarcodeService : IBarcodeService
         }
     }
 
-    public async Task<string> LookupBarcodeAsync(string barcode)
+    private async Task<string> LookupBarcodeAsync(string barcode)
     {
         if (string.IsNullOrWhiteSpace(barcode))
         {
@@ -58,7 +63,7 @@ public class BarcodeService : IBarcodeService
 
         return responseBody;
     }
-    public async Task<FormattedBarcodeResponse> DecodeBarcodeAsync(IFormFile file)
+    public async Task<string> DecodeBarcodeAsync(IFormFile file, int Id)
     {
         if (file == null || file.Length == 0)
             throw new ArgumentException("No file uploaded.");
@@ -76,8 +81,17 @@ public class BarcodeService : IBarcodeService
         {
             var (type, value) = zxingBarcode.Value;
             var product = await LookupBarcodeAsync(value);
-            var response = FormatBarcodeResponse(product);
-            return response;
+            var parsedProducts = ParseProductData(product);
+            if (parsedProducts != null) 
+            {
+                var profile = await _profileRepository.GetAsync(Id);
+                var productsDetails = await GenerateProductDetails(parsedProducts.Product.Name, profile);
+                return productsDetails;
+            }
+            else
+            {
+                throw new Exception("No barcode detected.");
+            }
         }
         throw new Exception("No barcode detected.");
     }
@@ -104,12 +118,87 @@ public class BarcodeService : IBarcodeService
         }
     }
 
-    public class OuterResponse
+    
+
+    private string GeneratePrompt(Profile userProfile, string productDetail)
     {
-        public string BarcodeResult { get; set; }
+        var age = CalculateAge(userProfile.DateOfBirth);
+        var skinType = userProfile.SkinType ?? "unspecified";
+        var goals = userProfile.UserGoals;
+
+        var goalsDescription = (goals != null && goals.Any()) ? string.Join(", ", goals) : "maintain healthy skin";
+        var ageDescription = (age != 0) ? age.ToString() : "of unspecified age";
+
+        return $"Analyze the ingredients of {productDetail}, provide a safety score for" +
+            $" the product, and give a risk breakdown based on my skin profile. I am a " +
+            $"{ageDescription}-year-old {userProfile.Gender} with {skinType} skin " +
+            $"aiming to {goalsDescription}. Highlight any potential risks (e.g.," +
+            $" allergens, pollutants, endocrine disruptors, and others), side effects," +
+            $" and regulatory concerns.";
     }
 
-    public class BarcodeResult
+    private int CalculateAge(DateTime dateOfBirth)
+    {
+        var today = DateTime.Today;
+        var age = today.Year - dateOfBirth.Year;
+        if (dateOfBirth.Date > today.AddYears(-age)) age--;
+        return age;
+    }
+
+
+    private async Task<string> GetAIResponse(string apiKey, string prompt)
+    {
+        var openai = new OpenAIAPI(apiKey);
+        var chatRequest = new ChatRequest
+        {
+            Model = "ft:gpt-4o-mini-2024-07-18:personal:seekai:B3jXPVIQ",
+            Messages = new[]
+            {
+                new ChatMessage(ChatMessageRole.System, "\"You are an AI assistant that" +
+                " provides detailed ingredient analysis and safety assessments for " +
+                "skincare products. You classify ingredients based on their risk levels" +
+                " (high, medium, low) and provide explanations, including potential " +
+                "side effects, chemical functions, and regulatory concerns. You also" +
+                " generate an overall safety score based on the user's skin type, age," +
+                " and gender.\""),
+                new ChatMessage(ChatMessageRole.User, prompt)
+            }
+        };
+
+        var result = await openai.Chat.CreateChatCompletionAsync(chatRequest);
+        return result.Choices.Count > 0 ? result.Choices[0].Message.Content : "No response from AI.";
+    }
+
+
+    public async Task<string> GenerateProductDetails(string product, Profile profile)
+    {
+        
+        var apiKey = _configuration["OpenAI:ApiKey"];
+        var prompt = GeneratePrompt(profile, product);
+        var aiResponse = await GetAIResponse(apiKey, prompt);
+
+        return aiResponse;
+    }
+
+
+    public static ProductData ParseProductData(string jsonString)
+    {
+        try
+        {
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<ProductData>(jsonString, options);
+        }
+        catch (JsonException ex)
+        {
+            throw new Exception($"Error parsing JSON: {ex.Message}");
+        }
+    }
+
+    public class ProductData
     {
         public string Code { get; set; }
         public string CodeType { get; set; }
@@ -124,142 +213,33 @@ public class BarcodeService : IBarcodeService
         public string Region { get; set; }
         public string ImageUrl { get; set; }
         public string Brand { get; set; }
-        public string[][] Specs { get; set; }
+        public List<List<string>> Specs { get; set; }
         public string Category { get; set; }
-        public string[] CategoryPath { get; set; }
-        public long Ean { get; set; }
-    }
-    public class FormattedBarcodeResponse
-    {
-        public string Code { get; set; }
-        public string CodeType { get; set; }
-        public string ProductName { get; set; }
-        public string Description { get; set; }
-        public string Brand { get; set; }
-        public string Category { get; set; }
-        public long Ean { get; set; }
-        public string ImageUrl { get; set; }
+        public List<string> CategoryPath { get; set; }
+        public string Upc { get; set; }
+        public long? Ean { get; set; }
     }
 
-    public static FormattedBarcodeResponse FormatBarcodeResponse(string jsonResponse)
+    public static Dictionary<string, string> GetProductDataAsStrings(ProductData data)
     {
-        try
+        var result = new Dictionary<string, string>
         {
-            var outerObject = JsonSerializer.Deserialize<OuterResponse>(jsonResponse);
-
-            if (outerObject == null || string.IsNullOrEmpty(outerObject.BarcodeResult))
-            {
-                Console.WriteLine("Error: barcodeResult is null or empty.");
-                return null;
-            }
-
-            var barcodeData = JsonSerializer.Deserialize<BarcodeResult>(outerObject.BarcodeResult);
-
-            return new FormattedBarcodeResponse
-            {
-                Code = barcodeData.Code,
-                CodeType = barcodeData.CodeType,
-                ProductName = barcodeData.Product.Name,
-                Description = barcodeData.Product.Description,
-                Brand = barcodeData.Product.Brand,
-                Category = barcodeData.Product.Category,
-                Ean = barcodeData.Product.Ean,
-                ImageUrl = barcodeData.Product.ImageUrl
-            };
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error parsing JSON: {ex.Message}");
-            return null;
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/*using System;
-using System.Drawing;
-using System.IO;
-using Google.Cloud.Vision.V1;
-using HealthCare.Core.Application.Interface.Services;
-using OpenAI_API;
-using ZXing;
-using ZXing.Common;
-
-public class BarcodeService : IBarcodeService
-{
-    private readonly string _openAiApiKey;
-    private readonly HashSet<string> _allowedExtensions = new() { ".jpg", ".jpeg", ".png" };
-
-    public BarcodeService(string openAiApiKey, string googleCredentialsPath)
-    {
-        _openAiApiKey = openAiApiKey;
-        Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", googleCredentialsPath);
-    }
-
-    public async Task<string> DecodeBarcodeAsync(IFormFile file)
-    {
-        if (file == null || file.Length == 0)
-            throw new ArgumentException("No file uploaded.");
-
-        var extension = Path.GetExtension(file.FileName).ToLower();
-        if (!_allowedExtensions.Contains(extension))
-            throw new ArgumentException("Unsupported file format. Only JPG, JPEG, and PNG are allowed.");
-
-        using var stream = file.OpenReadStream();
-        var image = Google.Cloud.Vision.V1.Image.FromStream(stream);
-        var client = await ImageAnnotatorClient.CreateAsync();
-        var response = await client.DetectLocalizedObjectsAsync(image);
-
-        var barcodes = response
-            .Where(obj => obj.Name.ToLower().Contains("barcode") || obj.Name.ToLower().Contains("qr"))
-            .ToList();
-
-        if (barcodes.Count == 0)
-            throw new Exception("No barcode detected.");
-
-        stream.Position = 0;
-        using var bitmap = new Bitmap(stream);
-        var reader = new BarcodeReaderGeneric
-        {
-            AutoRotate = true,
-            Options = new DecodingOptions { TryHarder = true }
+            { "Barcode", data.Code },
+            { "CodeType", data.CodeType },
+            { "Inferred", data.Inferred.ToString() },
+            { "Name", data.Product.Name },
+            { "Brand", data.Product.Brand },
+            { "Description", data.Product.Description },
+            { "Region", data.Product.Region },
+            { "Category", data.Product.Category },
+            { "CategoryPath", string.Join(" > ", data.Product.CategoryPath) },
+            { "ImageUrl", data.Product.ImageUrl },
+            { "UPC", data.Product.Upc ?? "Not available" },
+            { "EAN", data.Product.Ean?.ToString() ?? "Not available" }
         };
 
-        var result = reader.Decode(bitmap);
-        if (result == null)
-            throw new Exception("Barcode detected but could not be decoded.");
-
-        string barcodeNumber = result.Text;
-        string barcodeType = result.BarcodeFormat.ToString();
-        string productName = await GetProductNameFromOpenAI(barcodeNumber);
-
-        return $"Barcode Type: {barcodeType}\nBarcode Value: {barcodeNumber}\nProduct Name: {productName}";
-    }
-
-    private async Task<string> GetProductNameFromOpenAI(string barcodeNumber)
-    {
-        try
-        {
-            var api = new OpenAIAPI(_openAiApiKey);
-            var chat = api.Chat.CreateConversation();
-
-            chat.AppendUserInput($"Identify the product associated with barcode: {barcodeNumber}");
-            return await chat.GetResponseFromChatbotAsync();
-        }
-        catch (Exception ex)
-        {
-            return $"Failed to retrieve product name: {ex.Message}";
-        }
+        return result;
     }
 }
-*/
+
+

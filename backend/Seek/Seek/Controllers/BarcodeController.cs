@@ -16,11 +16,11 @@ public class BarcodeController : ControllerBase
     }
 
     [HttpPost("decode")]
-    public async Task<IActionResult> GetBarcodeDetails(IFormFile file)
+    public async Task<IActionResult> GetBarcodeDetails(IFormFile file, int id)
     {
         try
         {
-            FormattedBarcodeResponse barcodeResult = await _barcodeService.DecodeBarcodeAsync(file);
+            var barcodeResult = await _barcodeService.DecodeBarcodeAsync(file, id);
             return Ok(new { barcodeResult });
         }
         catch (Exception ex)

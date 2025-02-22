@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Seek")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86c0d5e58704b720e25672ef37ae02fadeade18c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Seek")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Seek")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

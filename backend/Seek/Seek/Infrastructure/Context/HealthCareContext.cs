@@ -107,7 +107,8 @@ namespace Seek.Infrastructure.Context
                 CreatedBy = "1",
                 Nationality = "Nigerian",
                 AllergiesSerialized = JsonSerializer.Serialize(new List<string>()),
-                GoalsSerialized = JsonSerializer.Serialize(new List<string>())
+                GoalsSerialized = JsonSerializer.Serialize(new List<string>()),
+                SkinType = "Normal Skin"
             });
         }
     }

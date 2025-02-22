@@ -5,7 +5,8 @@ namespace Seek.Core.Application.Interface.Services
 {
     public interface IBarcodeService
     {
-        public Task<FormattedBarcodeResponse> DecodeBarcodeAsync(IFormFile file);
+        public Task<string> GenerateProductDetails(string product, Profile profile);
+        public Task<string> DecodeBarcodeAsync(IFormFile file, int Id);
     }
 }
 
