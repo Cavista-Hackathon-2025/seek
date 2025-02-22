@@ -8,7 +8,7 @@ export default function MainLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className="font-american bg-[#fdf5f5] bg-cover bg-no-repeat bg-[url('/love2.png')] flex ">
+        <div className="satoshi bg-cover bg-no-repeat flex ">
             <div className='md:flex hidden flex-col gap-[310px] items-center py-[81px] pl-[81px] pr-[20px] '>
                 <ul className='flex flex-col gap-[10px] w-[102px]'>
                     {['Info', 'Message', 'Template', 'Preview', 'Share'].map((item, idx) => ( <li key={idx} className={`${idx == 1 ? 'text-black font-semibold' : 'text-[#0000005a]'} text-[16px]/[18px] flex items-center justify-between`}>
