@@ -23,15 +23,17 @@ const Chat = () => {
   return (
     <div>
         {!isContentReplaced ? (
-          <div className="justify-between flex flex-col lg:min-h-[80vh] xl:min-h-[85vh] overflow-hidden">
-            <div className="mx-auto w-fit">
+          <div className="justify-between flex flex-col lg:min-h-[80vh] xl:min-h-[85vh] max-w-[80vw] overflow-hidden">
+            <div className="mx-auto w-fit left-0 right-0 -top-32 absolute">
                 <Banner />
             </div>
+            <div className="mt-48 overflow-hidden">
             <ChatQuestions
               isContentReplaced={isContentReplaced}
               setIsContentReplaced={setIsContentReplaced}
               sendMessage={sendMessage}
             />
+            </div>
             <div>
 
             <ChatInput

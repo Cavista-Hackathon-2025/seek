@@ -14,8 +14,8 @@ const ChatQuestions: React.FC<ChatQuestionsProps> = ({
   sendMessage,
 }) => {
   return (
-    <div className=" gap-4 mt-3 flex-wrap items-center  justify-center">
-      <Marquee className="">
+    <div className=" gap-4 mt-3 flex-wrap items-center justify-center overflow-hidden">
+      <Marquee className="overflow-hidden">
         <ChatQuestion
           isContentReplaced={isContentReplaced}
           setIsContentReplaced={setIsContentReplaced}

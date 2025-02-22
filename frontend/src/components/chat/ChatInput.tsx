@@ -1,12 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form";
 import { Button } from "../ui/button";
-import { searchProductFormDef, searchProductValidationSchema } from "@/models/validations/searchproduct.validation";
-import { ProductServices } from "@/services/product.services";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { searchProductFormDef } from "@/models/validations/searchproduct.validation";
 
 interface ChatInputProps {
   userMessage: string;
