@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-interface UrlState {
+interface ProductState {
   product: string;
   error: string;
   loading: boolean;
@@ -9,7 +9,7 @@ interface UrlState {
   setLoading: (loading: boolean) => void;
 }
 
-export const useProductStore = create<UrlState>((set) => ({
+export const useProductStore = create<ProductState>((set) => ({
   product: "",
   error: "",
   loading: false,
