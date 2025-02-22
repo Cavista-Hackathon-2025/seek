@@ -1,0 +1,114 @@
+﻿using Seek.Core.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection.Emit;
+using System.Text.Json;
+
+namespace Seek.Infrastructure.Context
+{
+    public class HealthCareContext : DbContext
+    {
+
+        public HealthCareContext(DbContextOptions<HealthCareContext> opt) : base(opt)
+        {
+        }
+
+        public DbSet<Role> Roles => Set<Role>();
+        public DbSet<User> Users => Set<User>();
+        public DbSet<Profile> Profiles => Set<Profile>();
+        public DbSet<UserInteraction> UserInteractions => Set<UserInteraction>();
+        public DbSet<VerificationCode> VerificationCodes => Set<VerificationCode>();
+        
+
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            base.ConfigureConventions(configurationBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                foreach (var property in entityType.GetProperties())
+                {
+                    if (property.ClrType == typeof(DateTime) || property.ClrType == typeof(DateTime?))
+                    {
+                        property.SetValueConverter(new ValueConverter<DateTime, DateTime>(
+                            v => v.ToUniversalTime(),
+                            v => DateTime.SpecifyKind(v, DateTimeKind.Utc)));
+                    }
+                }
+            }
+
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Role>().Property<int>("Id").ValueGeneratedOnAdd();
+            modelBuilder.Entity<User>().Property<int>("Id").ValueGeneratedOnAdd();
+            modelBuilder.Entity<Profile>().Property<int>("Id").ValueGeneratedOnAdd();
+            modelBuilder.Entity<UserInteraction>().Property<int>("Id").ValueGeneratedOnAdd();
+            modelBuilder.Entity<VerificationCode>().Property<int>("Id").ValueGeneratedOnAdd();
+            modelBuilder.Entity<VerificationCode>()
+            .HasOne(vc => vc.User)
+            .WithMany(u => u.VerificationCodes)
+            .HasForeignKey(vc => vc.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Profile>()
+            .Property(p => p.AllergiesSerialized)
+            .HasConversion(
+                v => v,
+                v => v
+            );
+
+            modelBuilder.Entity<Profile>()
+            .Property(p => p.GoalsSerialized)
+            .HasConversion(
+                v => v,
+                v => v
+            );
+
+            modelBuilder.Entity<Profile>().Ignore(p => p.Allergies);
+            modelBuilder.Entity<Profile>().Ignore(p => p.UserGoals);
+
+            modelBuilder.Entity<Role>().HasData(
+            new Role { Id = 1, DateCreated = DateTime.UtcNow, Name = "Admin", CreatedBy = "1" },
+            new Role { Id = 2, DateCreated = DateTime.UtcNow, Name = "Patient", CreatedBy = "1" },
+             new Role { Id = 3, DateCreated = DateTime.UtcNow, Name = "restaurant", CreatedBy = "1" }
+            );
+
+            modelBuilder.Entity<User>().HasData(
+            new User
+            {
+                Id = 1,
+                DateCreated = DateTime.UtcNow,
+                FirstName = "Hasbiy",
+                LastName = "Oyebo",
+                IsDeleted = false,
+                Email = "oyebohm@gmail.com",
+                Password = BCrypt.Net.BCrypt.HashPassword("hasbiyallah"),
+                RoleId = 1,
+                CreatedBy = "ManualRegistration",
+            });
+
+            modelBuilder.Entity<Profile>().HasData(
+            new Profile
+            {
+                Id = 1,
+                Weight = 45,
+                Gender = Core.Domain.Enum.Gender.Female,
+                DateOfBirth = DateTime.SpecifyKind(new DateTime(2008, 3, 19, 0, 0, 0), DateTimeKind.Utc),
+                DateCreated = DateTime.UtcNow,
+                Height = 90,
+                IsDeleted = false,
+                UserId = 1,
+                CreatedBy = "1",
+                Nationality = "Nigerian",
+                AllergiesSerialized = JsonSerializer.Serialize(new List<string>()),
+                GoalsSerialized = JsonSerializer.Serialize(new List<string>())
+            });
+        }
+    }
+}
