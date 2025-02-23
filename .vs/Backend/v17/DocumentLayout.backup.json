@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HomePC\\source\\repos\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|c:\\users\\homepc\\source\\repos\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|c:\\users\\homepc\\source\\repos\\backend\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|solutionrelative:backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|c:\\users\\homepc\\source\\repos\\backend\\backend\\core\\application\\services\\barcodeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|solutionrelative:backend\\core\\application\\services\\barcodeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 247,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\HomePC\\source\\repos\\Backend\\Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Backend\\Program.cs",
+              "ToolTip": "C:\\Users\\HomePC\\source\\repos\\Backend\\Backend\\Program.cs",
+              "RelativeToolTip": "Backend\\Program.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T00:03:03.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\HomePC\\source\\repos\\Backend\\Backend\\appsettings.json",
+              "RelativeDocumentMoniker": "Backend\\appsettings.json",
+              "ToolTip": "C:\\Users\\HomePC\\source\\repos\\Backend\\Backend\\appsettings.json",
+              "RelativeToolTip": "Backend\\appsettings.json",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-22T23:02:26.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BarcodeService.cs",
+              "DocumentMoniker": "C:\\Users\\HomePC\\source\\repos\\Backend\\Backend\\Core\\Application\\Services\\BarcodeService.cs",
+              "RelativeDocumentMoniker": "Backend\\Core\\Application\\Services\\BarcodeService.cs",
+              "ToolTip": "C:\\Users\\HomePC\\source\\repos\\Backend\\Backend\\Core\\Application\\Services\\BarcodeService.cs",
+              "RelativeToolTip": "Backend\\Core\\Application\\Services\\BarcodeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkBAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T22:32:56.263Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
