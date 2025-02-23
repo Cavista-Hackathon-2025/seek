@@ -101,6 +101,8 @@ const Scanner = () => {
           >
             Scan
           </Button>
+
+          <p>{result}</p>
           <SearchProduct />
         </section>
       </MainLayout>
