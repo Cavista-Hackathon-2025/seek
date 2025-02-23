@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import SidebarItem from "./SidebarItem";
 import home from "../../public/home.svg";
-import logo from "../../public/konsume_logo.svg";
+import logo from "../../public/assets/seeek-logo.svg";
 import scanner from "../../public/scan.svg";
 import chat from "../../public/chat.svg";
 import profile from "../../public/profile.svg";

@@ -11,7 +11,6 @@ import LoginForm from '@/modules/auth/login/LoginForm';
 import SocialLogin from '@/modules/auth/login/SocialLogin';
 import Cookies from 'js-cookie';
 import { z } from 'zod';
-import { useUserContext } from '@/context/UserContext';
 import SignUpLink from '@/modules/auth/login/SignUpLink';
 import withoutAuth from '@/app/helpers/withoutAuth';
 import { checkUser } from '@/services/auth.services';
