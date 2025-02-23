@@ -19,14 +19,14 @@ useEffect(() => {
 
   // const makeRequest = async () => {
   //   try {
-  //     if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log("hii");
+  //     console.log("hii");
   //     const { data } = await gemini.post("/gemini-pro:generateContent", {
   //       contents: [{ parts: [{ text: query }] }],
   //     });
   //     setAnswer(data.candidates[0].content.parts[0].text);
-  //     if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(data);
-  //     if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log("done");
-  //     if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(query);
+  //     console.log(data);
+  //     console.log("done");
+  //     console.log(query);
   //   } catch (error: any) {
   //     toast.error(error);
   //   }

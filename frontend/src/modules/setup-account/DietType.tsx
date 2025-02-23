@@ -27,7 +27,7 @@ const DietType = () => {
       </p>
       <div className="flex gap-5 mx-auto w-fit mt-3">
         <div
-          className="w-[50px] cursor-pointer h-[50px] border-[2.5px] border-[#FFC501] rounded-[40px] flex items-center justify-center"
+          className="w-[50px] h-[50px] border-[2.5px] border-[#FFC501] rounded-[40px] flex items-center justify-center"
           onClick={previousPage}
         >
           <Image alt="line" src={line} width="30" height="30" className="" />

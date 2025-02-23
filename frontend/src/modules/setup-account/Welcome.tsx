@@ -11,8 +11,8 @@ const Welcome = () => {
     // Ensure this only runs on the client
     setIsClient(true);
   }, []);
-  // if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(getUserData());
-  // if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(getUserData()["name"]);
+  // console.log(getUserData());
+  // console.log(getUserData()["name"]);
   let userFirstName = ''; //getUserData()["name"].split(" ")[0];        //get the user first name by splitting the user name and retrieving the first name
   return (
     <div className=" relative gap-3 flex flex-col ">

@@ -48,7 +48,7 @@ const MealCard = ({ meal }: MealCardProps) => {
       localStorage.setItem(`mealImage_${mealName}`, base64Image);
       setImageUrl(base64Image);
     } catch (error) {
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.error('Error fetching image:', error);
+      console.error('Error fetching image:', error);
       retry(fetchImage);
     }
   }, 5000); // Debounce requests to prevent overwhelming the API
