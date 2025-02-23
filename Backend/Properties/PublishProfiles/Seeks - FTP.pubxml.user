@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArLYCQNUqqEa+1/GnwqJf7gAAAAACAAAAAAAQZgAAAAEAACAAAAD55nUZhNCcbYwXUDqJajVHVkoK75gFkVHIUj2xX/1iNQAAAAAOgAAAAAIAACAAAACCLps7sfekb+p7eMbDtVAZ42KhzP1DvcpRZhmYXAv4nYAAAADq8VE+uiKU6zewZN/EmwHwl6D6Jv5JwYZD3uf9LaXCSrdyS9fgDm/h6ocn/vtM2P0foNNvzHE9EIQ4XLrOvlYO1axZQybr7lPrh/jLgvb19HIGFjqkAHM+5WVUE2I5NaJhYQsSvRx2MNh3P+b60cSYvezzJZC2nB++Sk0NM/WphUAAAACkCVx+H6SAZytqHj/TSCbTWSNnDaz2l+28KKzIHK14i48KVXJXem76nnkfeZR+NeWxzpL+kX+oFgiQMS4WRF/J</EncryptedPassword>
+    <History>False|2025-02-22T21:09:26.1708917Z||;</History>
+    <LastFailureDetails />
+    <_PublishTargetUrl>ftps://waws-prod-blu-345.ftp.azurewebsites.windows.net/site/wwwroot</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>02/22/2025 16:28:13</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>02/22/2025 17:41:15</publishTime>
+    </File>
+    <File Include="Backend.deps.json">
+      <publishTime>02/22/2025 22:06:32</publishTime>
+    </File>
+    <File Include="Backend.exe">
+      <publishTime>02/22/2025 22:06:16</publishTime>
+    </File>
+    <File Include="Backend.pdb">
+      <publishTime>02/22/2025 22:06:16</publishTime>
+    </File>
+    <File Include="Backend.runtimeconfig.json">
+      <publishTime>02/22/2025 21:26:25</publishTime>
+    </File>
+    <File Include="Backend.staticwebassets.endpoints.json">
+      <publishTime>02/22/2025 21:22:46</publishTime>
+    </File>
+    <File Include="BCrypt.Net.dll">
+      <publishTime>05/04/2011 19:49:00</publishTime>
+    </File>
+    <File Include="BouncyCastle.Cryptography.dll">
+      <publishTime>12/01/2024 17:13:46</publishTime>
+    </File>
+    <File Include="Google.Api.CommonProtos.dll">
+      <publishTime>03/14/2024 08:49:40</publishTime>
+    </File>
+    <File Include="Google.Api.Gax.dll">
+      <publishTime>03/25/2024 17:53:08</publishTime>
+    </File>
+    <File Include="Google.Api.Gax.Grpc.dll">
+      <publishTime>03/25/2024 17:53:18</publishTime>
+    </File>
+    <File Include="Google.Apis.dll">
+      <publishTime>01/23/2025 10:15:54</publishTime>
+    </File>
+    <File Include="Google.LongRunning.dll">
+      <publishTime>03/25/2024 19:32:20</publishTime>
+    </File>
+    <File Include="Grpc.Auth.dll">
+      <publishTime>01/02/2024 17:27:58</publishTime>
+    </File>
+    <File Include="Grpc.Core.Api.dll">
+      <publishTime>01/02/2024 17:28:02</publishTime>
+    </File>
+    <File Include="Grpc.Net.Client.dll">
+      <publishTime>01/02/2024 17:28:06</publishTime>
+    </File>
+    <File Include="Grpc.Net.Common.dll">
+      <publishTime>01/02/2024 17:28:18</publishTime>
+    </File>
+    <File Include="MailKit.dll">
+      <publishTime>01/27/2025 00:42:48</publishTime>
+    </File>
+    <File Include="Microsoft.Bcl.AsyncInterfaces.dll">
+      <publishTime>10/23/2021 00:47:36</publishTime>
+    </File>
+    <File Include="Microsoft.Bcl.Memory.dll">
+      <publishTime>10/29/2024 03:39:30</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Abstractions.dll">
+      <publishTime>09/18/2024 00:49:08</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

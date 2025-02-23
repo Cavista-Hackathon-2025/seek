@@ -1,0 +1,177 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HomePC\\Desktop\\seek\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|c:\\users\\homepc\\desktop\\seek\\backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|solutionrelative:backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|c:\\users\\homepc\\desktop\\seek\\backend\\infrastructure\\repositories\\bookmarkrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|solutionrelative:backend\\infrastructure\\repositories\\bookmarkrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|c:\\users\\homepc\\desktop\\seek\\backend\\core\\application\\services\\mealrecommendationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|solutionrelative:backend\\core\\application\\services\\mealrecommendationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|c:\\users\\homepc\\desktop\\seek\\backend\\controllers\\mealrecommendation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\mealrecommendation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|c:\\users\\homepc\\desktop\\seek\\backend\\models\\bookmarkmodel\\bookmarkrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|solutionrelative:backend\\models\\bookmarkmodel\\bookmarkrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|c:\\users\\homepc\\desktop\\seek\\backend\\controllers\\bookmarkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\bookmarkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|c:\\users\\homepc\\desktop\\seek\\backend\\core\\domain\\entities\\bookmark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|solutionrelative:backend\\core\\domain\\entities\\bookmark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|c:\\users\\homepc\\desktop\\seek\\backend\\core\\domain\\entities\\mealrecommendation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|solutionrelative:backend\\core\\domain\\entities\\mealrecommendation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|c:\\users\\homepc\\desktop\\seek\\backend\\infrastructure\\context\\seekcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DE731C6-A1A3-4954-9E28-5A8E8EAB046B}|Backend\\Backend.csproj|solutionrelative:backend\\infrastructure\\context\\seekcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 247,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Backend",
+              "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Backend.csproj",
+              "RelativeDocumentMoniker": "Backend\\Backend.csproj",
+              "ToolTip": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Backend.csproj*",
+              "RelativeToolTip": "Backend\\Backend.csproj*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-23T03:46:06.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookmarkRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Infrastructure\\Repositories\\BookmarkRepository.cs",
+              "RelativeDocumentMoniker": "Backend\\Infrastructure\\Repositories\\BookmarkRepository.cs",
+              "ToolTip": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Infrastructure\\Repositories\\BookmarkRepository.cs",
+              "RelativeToolTip": "Backend\\Infrastructure\\Repositories\\BookmarkRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T03:45:22.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MealRecommendationService.cs",
+              "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Core\\Application\\Services\\MealRecommendationService.cs",
+              "RelativeDocumentMoniker": "Backend\\Core\\Application\\Services\\MealRecommendationService.cs",
+              "ToolTip": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Core\\Application\\Services\\MealRecommendationService.cs",
+              "RelativeToolTip": "Backend\\Core\\Application\\Services\\MealRecommendationService.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwAsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T03:45:03.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MealRecommendation.cs",
+              "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Controllers\\MealRecommendation.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\MealRecommendation.cs",
+              "ToolTip": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Controllers\\MealRecommendation.cs",
+              "RelativeToolTip": "Backend\\Controllers\\MealRecommendation.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T03:44:55.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Bookmark.cs",
+              "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Core\\Domain\\Entities\\Bookmark.cs",
+              "RelativeDocumentMoniker": "Backend\\Core\\Domain\\Entities\\Bookmark.cs",
+              "ToolTip": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Core\\Domain\\Entities\\Bookmark.cs",
+              "RelativeToolTip": "Backend\\Core\\Domain\\Entities\\Bookmark.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T03:44:36.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookMarkRequest.cs",
+              "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Models\\BookMarkModel\\BookMarkRequest.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\BookMarkModel\\BookMarkRequest.cs",
+              "ToolTip": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Models\\BookMarkModel\\BookMarkRequest.cs",
+              "RelativeToolTip": "Backend\\Models\\BookMarkModel\\BookMarkRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T03:43:50.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BookmarkController.cs",
+              "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Controllers\\BookmarkController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\BookmarkController.cs",
+              "ToolTip": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Controllers\\BookmarkController.cs",
+              "RelativeToolTip": "Backend\\Controllers\\BookmarkController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T03:43:23.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MealRecommendation.cs",
+              "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Core\\Domain\\Entities\\MealRecommendation.cs",
+              "RelativeDocumentMoniker": "Backend\\Core\\Domain\\Entities\\MealRecommendation.cs",
+              "ToolTip": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Core\\Domain\\Entities\\MealRecommendation.cs",
+              "RelativeToolTip": "Backend\\Core\\Domain\\Entities\\MealRecommendation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T03:42:57.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SeekContext.cs",
+              "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Infrastructure\\Context\\SeekContext.cs",
+              "RelativeDocumentMoniker": "Backend\\Infrastructure\\Context\\SeekContext.cs",
+              "ToolTip": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Infrastructure\\Context\\SeekContext.cs",
+              "RelativeToolTip": "Backend\\Infrastructure\\Context\\SeekContext.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T03:42:16.99Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
