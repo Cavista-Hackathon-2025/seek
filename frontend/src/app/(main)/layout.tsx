@@ -4,6 +4,8 @@ import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
 import { twMerge } from 'tailwind-merge';
 import { motion } from "motion/react"
+import { useSidebarStore } from '@/store/app.store';
+import Link from 'next/link';
 
 export default function MainLayout({
     children,
@@ -25,6 +27,9 @@ export default function MainLayout({
     const toggleSidebar = () => {
         setIsSidebarOpen((prev) => !prev);
     };
+    const { activeItem, setActiveItem } = useSidebarStore();
+    const menuItems = ['Home', 'Dashboard', 'Scan', 'Routine', 'Reports', 'Integrations', 'History', 'Chat with Seek ai'];
+
 
     return (
         <div className="satoshi bg-cover bg-no-repeat flex">
@@ -57,11 +62,25 @@ export default function MainLayout({
             >
                 <Image src='/assets/logo2.svg' alt='logo' width={86} height={96} className='group-hover:rotate-12 mb-6 transition-all' />
 
-                <ul className='flex flex-col gap-[10px]'>
-                    {['Home', 'Dashboard', 'Scan', 'Routine', 'Reports', 'Integrations', 'Reports', 'History', 'Chat with Seek ai'].map((item, idx) => (
-                        <li key={idx} className={`${idx == 1 ? 'text-black font-semibold' : 'text-[#0000005a]'} text-[16px]/[18px] flex items-center gap-3`}>
-                            <Image src='/assets/seek-logo.svg' alt='arrow' width={20} height={20} className='group-hover:rotate-12 transition-all' />
-                            <p className='text-base font-normal'>{item}</p>
+                <ul className="flex flex-col gap-[10px]">
+                    {menuItems.map((item, idx) => (
+                        <li
+                            key={idx}
+                            className={`cursor-pointer flex items-center gap-3 text-[16px]/[18px] transition-all ${activeItem === item ? 'text-black font-semibold' : 'text-[#0000005a]'
+                                }`}
+                            onClick={() => setActiveItem(item)}
+                        >
+                            <Link href={`/${item.toLowerCase()}`} className='flex items-center gap-3'>
+                            <Image
+                                src="/assets/seek-logo.svg"
+                                alt="arrow"
+                                width={20}
+                                height={20}
+                                className="group-hover:rotate-12 transition-all"
+                            />
+                            <p className="text-base font-normal">{item}</p>
+                            </Link>
+                            
                         </li>
                     ))}
                 </ul>
