@@ -29,7 +29,7 @@ const Sidebar: React.FC<DashboardNavProps> = ({ toggled }) => {
  
   return (
     <div
-      className={`min-h-screen p-4 bg-primary-bg md:fixed left-0 min-w-[82px] top-0 side1  ${
+      className={`min-h-screen p-4 bg-[#DEEDFF] md:fixed left-0 min-w-[82px] top-0 side1  ${
         toggled ? "left-0" : "md:left-0 left-[-300px]"
       } fixed  z-[6000] transition-all`}
     >

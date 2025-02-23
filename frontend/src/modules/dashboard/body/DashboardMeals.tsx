@@ -30,7 +30,7 @@ const DashboardMeals: React.FC<DashboardMealsProps> = ({ breakfast, lunch, dinne
   }, [tempMeals])
   const renderMealCard = (meal: string, label: string) => (
     <div
-      className="space-y-7 flex flex-col min-h-[145px] bg-primary-bg-100 px-3 pt-3 relative rounded-lg opacity-70"
+      className="space-y-7 flex flex-col min-h-[145px] bg-[#DEEDFF] px-3 pt-3 relative rounded-lg opacity-70"
     >
       <div className="flex justify-between">
         <p className="text-primarygtext font-bold text-mobile-caption">{label}</p>

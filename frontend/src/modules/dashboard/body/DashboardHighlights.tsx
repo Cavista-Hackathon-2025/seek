@@ -48,7 +48,7 @@ const DashboardHighlights = ({ loading, loadingBlog, key, title, text, category 
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="bg-primary-bg p-4 rounded-2xl js-tilt mb-8 h-[80%] mealreco md:flex-[.5] daily-tea">
+            <div className="bg-[#DEEDFF] p-4 rounded-2xl js-tilt mb-8 h-[80%] mealreco md:flex-[.5] daily-tea">
               <div className="flex justify-between items-center mb-5">
                 <p className="font-bold">Daily Nutritional Tea</p>
                 <Image src={tea} alt="tea" />
@@ -101,7 +101,7 @@ const DashboardHighlights = ({ loading, loadingBlog, key, title, text, category 
           </Button>
         </div> */}
 
-        <div className="max-w-[299px] hidden md:flex flex-col gap-6 bg-primary-bg p-4 rounded-2xl js-tilt h-full mealreco md:flex-[.5] daily-tea">
+        <div className="max-w-[299px] hidden md:flex flex-col gap-6 bg-[#DEEDFF] p-4 rounded-2xl js-tilt h-full mealreco md:flex-[.5] daily-tea">
           <div className="flex justify-between items-center mb-5">
             <p className="font-bold">Daily Nutritional Tea</p>
             <Image src={tea} alt="tea" />

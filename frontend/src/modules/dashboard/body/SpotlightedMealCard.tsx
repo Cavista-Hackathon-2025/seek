@@ -19,7 +19,7 @@ const SpotlightedMealCard: React.FC<SpotlightedMealCardProps> = ({ meal, loading
     setIsMounted(true);
   }, []);
   return (
-    <div className="md:max-w-[299px] h-[227px]  font-satoshi flex-[.5] w-full bg-secondary-100 p-5 gap-2 flex flex-col rounded-2xl js-tilt mealreco relative">
+    <div className="md:max-w-[299px] h-[227px]  font-satoshi flex-[.5] w-full bg-[#EFEEF4] p-5 gap-2 flex flex-col rounded-2xl js-tilt mealreco relative">
       <div className="flex justify-between items-center">
         <p className="font-bold text-xs text-white">Today&apos;s Spotlighted Meal</p>
         <Image src={star} alt="star" />
