@@ -7,9 +7,9 @@ namespace Backend.Core.Application.Services
 {
     public class UserInteractionService : IUserInteractionService
     {
-        private readonly HealthCareContext _context;
+        private readonly SeekContext _context;
 
-        public UserInteractionService(HealthCareContext context)
+        public UserInteractionService(SeekContext context)
         {
             _context = context;
         }

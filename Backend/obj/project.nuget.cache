@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tZieAgp27uE=",
+  "dgSpecHash": "oelaD5N+VtE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\HomePC\\source\\repos\\Backend\\Backend\\Backend.csproj",
+  "projectFilePath": "C:\\Users\\HomePC\\Desktop\\seek\\Backend\\Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HomePC\\.nuget\\packages\\bcrypt.net\\0.1.0\\bcrypt.net.0.1.0.nupkg.sha512",
     "C:\\Users\\HomePC\\.nuget\\packages\\bouncycastle.cryptography\\2.5.0\\bouncycastle.cryptography.2.5.0.nupkg.sha512",

@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Backend.Migrations
 {
-    [DbContext(typeof(HealthCareContext))]
+    [DbContext(typeof(SeekContext))]
     partial class HealthCareContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -8,8 +8,8 @@ namespace Backend.Infrastructure.Repositories
 {
     public class RoleRepository : IRoleRepository
     {
-        private readonly HealthCareContext _context;
-        public RoleRepository(HealthCareContext context)
+        private readonly SeekContext _context;
+        public RoleRepository(SeekContext context)
         {
             _context = context;
         }

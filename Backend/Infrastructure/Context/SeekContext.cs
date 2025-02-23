@@ -1,4 +1,5 @@
 ﻿using Backend.Core.Domain.Entities;
+using Backend.Core.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System.Collections.Generic;
@@ -8,10 +9,10 @@ using System.Text.Json;
 
 namespace Backend.Infrastructure.Context
 {
-    public class HealthCareContext : DbContext
+    public class SeekContext : DbContext
     {
 
-        public HealthCareContext(DbContextOptions<HealthCareContext> opt) : base(opt)
+        public SeekContext(DbContextOptions<SeekContext> opt) : base(opt)
         {
         }
 
@@ -20,7 +21,9 @@ namespace Backend.Infrastructure.Context
         public DbSet<Profile> Profiles => Set<Profile>();
         public DbSet<UserInteraction> UserInteractions => Set<UserInteraction>();
         public DbSet<VerificationCode> VerificationCodes => Set<VerificationCode>();
-        
+
+        public DbSet<MealPlans> MealPlans => Set<MealPlans>();
+
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {
@@ -108,7 +111,6 @@ namespace Backend.Infrastructure.Context
                 Nationality = "Nigerian",
                 AllergiesSerialized = JsonSerializer.Serialize(new List<string>()),
                 GoalsSerialized = JsonSerializer.Serialize(new List<string>()),
-                SkinType = "Normal Skin"
             });
         }
     }

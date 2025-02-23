@@ -5,9 +5,9 @@ namespace Backend.Infrastructure.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly HealthCareContext _context;
+        private readonly SeekContext _context;
 
-        public UnitOfWork(HealthCareContext context)
+        public UnitOfWork(SeekContext context)
         {
             _context = context;
         }

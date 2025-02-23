@@ -13,8 +13,7 @@ namespace Backend.Core.Domain.Entities
         public DateTime DateOfBirth { get; set; }
         public string Nationality { get; set; } = default!;
         public string? DietType { get; set; } = default!;
-        public string SkinType { get; set; } = default!;
-        public bool Reminder { get; set; } = false;
+
         [NotMapped]
         public ICollection<string> Allergies
         {
@@ -34,4 +33,6 @@ namespace Backend.Core.Domain.Entities
         public int UserId { get; set; }
         public virtual User User { get; set; } = default!;
     }
+
+
 }

@@ -8,8 +8,8 @@ namespace Backend.Infrastructure.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly HealthCareContext _context;
-        public UserRepository(HealthCareContext context)
+        private readonly SeekContext _context;
+        public UserRepository(SeekContext context)
         {
             _context = context;
         }

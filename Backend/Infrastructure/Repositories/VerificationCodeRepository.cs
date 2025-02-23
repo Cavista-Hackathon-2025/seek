@@ -8,9 +8,9 @@ namespace Backend.Infrastructure.Repositories
 {
     public class VerificationCodeRepository : IVerificationCodeRepository
     {
-        protected HealthCareContext _context;
+        protected SeekContext _context;
 
-        public VerificationCodeRepository(HealthCareContext context) =>
+        public VerificationCodeRepository(SeekContext context) =>
                     _context = context;
         public async Task<VerificationCode> Create(VerificationCode entity)
         {

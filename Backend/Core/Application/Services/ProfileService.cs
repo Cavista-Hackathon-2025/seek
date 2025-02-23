@@ -61,7 +61,6 @@ namespace Backend.Core.Application.Services
                     Allergies = profile.Allergies,
                     Nationality = profile.Nationality,
                     DietType = profile.DietType,
-                    SkinType = profile.SkinType,
                 };
             }).ToList();
 
@@ -168,7 +167,6 @@ namespace Backend.Core.Application.Services
                     Nationality = profile.Nationality,
                     DietType = profile.DietType,
                     UserId = profile.UserId,
-                    SkinType = profile.SkinType,
 
                 }
             };
@@ -248,7 +246,6 @@ namespace Backend.Core.Application.Services
             profile.DateCreated = DateTime.UtcNow;
             profile.IsDeleted = false;
             profile.CreatedBy = "1";
-            profile.SkinType = request.SkinType;
 
 
             try
@@ -286,7 +283,6 @@ namespace Backend.Core.Application.Services
                     Allergies = profile.Allergies,
                     Nationality = profile.Nationality,
                     DietType = profile.DietType,
-                     SkinType = profile.SkinType,
                 }
             };
         }
@@ -375,7 +371,6 @@ namespace Backend.Core.Application.Services
                 profile.DateModified = DateTime.UtcNow;
                 profile.IsDeleted = false;
                 profile.CreatedBy = "1";
-                profile.SkinType = request.SkinType;
 
                 role.Users.Add(user);
                 _roleRepository.Update(role);
