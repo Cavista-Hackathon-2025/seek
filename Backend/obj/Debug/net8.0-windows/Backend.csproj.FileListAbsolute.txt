@@ -162,7 +162,6 @@ C:\Users\HomePC\Desktop\seek\Backend\obj\Debug\net8.0-windows\Backend.sourcelink
 C:\Users\HomePC\Desktop\seek\Backend\obj\Debug\net8.0-windows\Backend.dll
 C:\Users\HomePC\Desktop\seek\Backend\obj\Debug\net8.0-windows\refint\Backend.dll
 C:\Users\HomePC\Desktop\seek\Backend\obj\Debug\net8.0-windows\Backend.pdb
-C:\Users\HomePC\Desktop\seek\Backend\bin\Debug\net8.0-windows\appsettings.Development.json
 C:\Users\HomePC\Desktop\seek\Backend\bin\Debug\net8.0-windows\x86\leptonica-1.82.0.dll
 C:\Users\HomePC\Desktop\seek\Backend\bin\Debug\net8.0-windows\x86\tesseract50.dll
 C:\Users\HomePC\Desktop\seek\Backend\bin\Debug\net8.0-windows\x64\leptonica-1.82.0.dll

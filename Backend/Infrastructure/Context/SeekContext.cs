@@ -22,6 +22,9 @@ namespace Backend.Infrastructure.Context
         public DbSet<UserInteraction> UserInteractions => Set<UserInteraction>();
         public DbSet<VerificationCode> VerificationCodes => Set<VerificationCode>();
 
+        public DbSet<MealRecommendation> MealRecommendations => Set<MealRecommendation>();
+        public DbSet<Bookmark> Bookmarks => Set<Bookmark>();
+
         public DbSet<MealPlans> MealPlans => Set<MealPlans>();
 
 

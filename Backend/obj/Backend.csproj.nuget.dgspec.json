@@ -22,7 +22,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0-windows"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -30,8 +30,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0-windows7.0": {
-            "targetAlias": "net8.0-windows",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -48,8 +48,8 @@
         "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net8.0-windows7.0": {
-          "targetAlias": "net8.0-windows",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "BCrypt.Net": {
               "target": "Package",
@@ -57,39 +57,71 @@
             },
             "Google.Apis.Auth": {
               "target": "Package",
-              "version": "[1.69.0, )"
-            },
-            "Google.Cloud.Vision.V1": {
-              "target": "Package",
-              "version": "[3.7.0, )"
+              "version": "[1.68.0, )"
             },
             "MailKit": {
               "target": "Package",
-              "version": "[4.10.0, )"
+              "version": "[4.6.0, )"
             },
-            "Microsoft.EntityFrameworkCore": {
+            "Markdig": {
               "target": "Package",
-              "version": "[8.0.10, )"
+              "version": "[0.37.0, )"
             },
-            "Microsoft.EntityFrameworkCore.Design": {
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.CodeAnalysis.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.10, )"
+              "version": "[3.3.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.10, )"
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "MimeKit": {
               "target": "Package",
-              "version": "[4.10.0, )"
+              "version": "[4.6.0, )"
             },
-            "Npgsql": {
+            "Moq": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[4.20.70, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "NAudio": {
+              "target": "Package",
+              "version": "[2.2.1, )"
+            },
+            "NCrontab.Signed": {
+              "target": "Package",
+              "version": "[3.3.3, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
@@ -99,33 +131,27 @@
               "target": "Package",
               "version": "[1.11.0, )"
             },
-            "RestSharp": {
-              "target": "Package",
-              "version": "[112.1.0, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
             },
-            "System.Drawing.Common": {
+            "Swashbuckle.AspNetCore.Annotations": {
               "target": "Package",
-              "version": "[9.0.2, )"
+              "version": "[7.2.0, )"
             },
-            "System.IdentityModel.Tokens.Jwt": {
+            "native-websocket": {
               "target": "Package",
-              "version": "[8.5.0, )"
+              "version": "[0.0.3, )"
             },
-            "Tesseract": {
+            "xUnit": {
               "target": "Package",
-              "version": "[5.2.0, )"
+              "version": "[2.9.0, )"
             },
-            "ZXing.Net": {
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[0.16.10, )"
-            },
-            "ZXing.Net.Bindings.Windows.Compatibility": {
-              "target": "Package",
-              "version": "[0.16.13, )"
+              "version": "[2.4.1, )"
             }
           },
           "imports": [
@@ -145,9 +171,6 @@
             },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WPF": {
-              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
