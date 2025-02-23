@@ -15,6 +15,7 @@ export const SetupProvider: React.FC<SetupProviderProps> = ({ children }) => {
   const [diet, setDiet] = useState<string>('');
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [userID, setUserID] = useState<number>();
+  const [userSkin, setUserSkin] = useState<string>('');
 
   const nextPage = () => {
     setCurrentPage((prev) => prev + 1);
@@ -48,6 +49,8 @@ export const SetupProvider: React.FC<SetupProviderProps> = ({ children }) => {
         setDiet,
         userID,
         setUserID,
+        userSkin,
+        setUserSkin
       }}
     >
       {children}

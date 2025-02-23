@@ -138,6 +138,8 @@ export interface SetupContextType {
   setDiet: React.Dispatch<React.SetStateAction<string>>;
   userID: number | undefined;
   setUserID: React.Dispatch<React.SetStateAction<number | undefined>>;
+  userSkin: string;
+  setUserSkin: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export interface DashboardNavProps {
@@ -150,6 +152,10 @@ export interface GoalCheckboxProps {
   data: string;
 }
 
+export interface SkinTypeProps {
+  label: string;
+  data: string;
+}
 export interface SidebarProps {
   icon: StaticImageData;
   text: string;

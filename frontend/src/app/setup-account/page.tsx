@@ -28,6 +28,7 @@ const SetupAccount = () => {
     gender,
     weight,
     diet,
+    userSkin
   } = useSetupContext();
   const { username } = useUserContext();
   const [firstName, setFirstName] = useState(username?.split(" ")[0] ?? "");
@@ -67,6 +68,7 @@ const SetupAccount = () => {
               noOfMealPerDay: "",
               allergies: possibleDiseases,
               userGoals: [userGoal],
+              skinType: userSkin
             },
             {
               headers: {
@@ -176,7 +178,7 @@ const SetupAccount = () => {
         </div>
 
         <Form />
-        {currentPage == 4 && (
+        {currentPage == 5 && (
           <Button
             type="submit"
             className="mt-16 flex items-center justify-center mx-auto p-2 w-full md:w-[400px] h-[2.9rem] text-primary-bg-100 bg-primarygtext"

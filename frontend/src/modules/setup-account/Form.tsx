@@ -4,6 +4,7 @@ import Goals from './Goals';
 import HealthConditions from './HealthConditions';
 import DietType from './DietType';
 import { useSetupContext } from '../../context/SetupContext';
+import SkinType from './SkinType';
 
 const Form = () => {
   const { currentPage, setCurrentPage } = useSetupContext();
@@ -17,6 +18,8 @@ const Form = () => {
       return <HealthConditions />;
     case 4:
       return <DietType />;
+    case 5:
+        return <SkinType />;
     default:
       return null;
       break;

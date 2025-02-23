@@ -10,7 +10,7 @@ const MultiStepProgressBar = ({currentStep}:MultiStepProgressBarProps) => {
 
   return (
     <div className="progress-lines-container absolute right-24 top-0 bottom-0 my-auto z-10">
-      {[1, 2, 3, 4].map((step) => (
+      {[1, 2, 3, 4, 5].map((step) => (
         <div
           key={step}
           className={`progress-line bg-success-100 ${currentStep === step ? ' bg-success-200  h-[40%]' : 'h-[20%]'}`}
