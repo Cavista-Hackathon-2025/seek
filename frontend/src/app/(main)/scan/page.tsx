@@ -1,19 +1,16 @@
 
 import SearchProduct from '@/components/dashboard/search-product'
+import Banner from '@/components/shared/banner'
 import Image from 'next/image'
 
 const Scan = () => {
     return (
         <section className='satoshi flex flex-col items-center'>
-            
-            <div className='relative max-w-[426px]'>
-                <Image src='/assets/bannerimg.svg' alt='banner' width={426} height={214} />
-                <div className='flex items-center gap-[14px] absolute bottom-[52px] -rotate-1 left-0 right-0  justify-center'>
-                    <Image src='/assets/seek-logo.svg' alt='seek' width={44} height={44} />
-                    <p className='text-[23px] font-medium'>Select Scan Method</p>
-                </div>
+
+            <div className='w-fit left-0 right-0 -top-28 absolute mx-auto'>
+                <Banner text='Select Scan Method' />
             </div>
-            <p className='text-[22px] font-medium max-w-[489px] my-20 text-center '>Scan, search, or chat with Seek to get instant insights on your products.</p>
+            <p className='text-[22px] font-medium mt-52 max-w-[489px] mb-14 text-center '>Scan, search, or chat with Seek to get instant insights on your products.</p>
 
             <div className='flex items-center gap-8'>
                 <div className={`cursor-pointer group flex flex-col gap-[33px] items-center border-b-[#F3F3F3] rounded-[17px] border-b-[7px] p-[33px]  w-[255px] h-[212px] bg-cover bg-no-repeat bg-center`} style={{ backgroundImage: `url(/assets/scan-bg1.svg)` }}>

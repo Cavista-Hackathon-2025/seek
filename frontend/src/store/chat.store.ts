@@ -14,7 +14,7 @@ interface ChatState {
   setIsContentReplaced: (isContentReplaced: boolean) => void;
   loading: boolean;
   setLoading: (loading: boolean) => void;
-  sendMessage: (e: any, containerRef: React.RefObject<HTMLDivElement>) => Promise<void>;
+  sendMessage: (e: any) => Promise<void>;
 }
 
 export const useChatStore = create<ChatState>((set, get) => ({
@@ -27,7 +27,7 @@ export const useChatStore = create<ChatState>((set, get) => ({
   loading: false,
   setLoading: (loading) => set({ loading }),
 
-  sendMessage: async (e, containerRef) => {
+  sendMessage: async (e) => {
     e.preventDefault();
 
     const { userMessage, chatLog, setChatLog, setIsContentReplaced, setUserMessage, setLoading } = get();
@@ -56,9 +56,5 @@ export const useChatStore = create<ChatState>((set, get) => ({
     // } finally {
     //   setLoading(false);
     // }
-
-    if (containerRef.current) {
-      containerRef.current.scrollTop = containerRef.current.scrollHeight;
-    }
   },
 }));

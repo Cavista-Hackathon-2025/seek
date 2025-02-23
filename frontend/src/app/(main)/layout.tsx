@@ -68,7 +68,7 @@ export default function MainLayout({
             </motion.div>
 
             {/* Main Content */}
-            <div className="w-fit mx-auto sm:mx-0 md:ml-[150px] md:mr-auto xl:mx-auto">
+            <div className="w-fit mx-auto sm:mx-0 md:ml-[150px] md:mr-auto xl:mx-auto relative">
                 {children}
             </div>
         </div>

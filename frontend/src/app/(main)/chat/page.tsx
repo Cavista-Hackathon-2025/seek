@@ -7,7 +7,7 @@ import ChatQuestions from "@/components/chat/ChatQuestions";
 import Banner from "@/components/shared/banner";
 
 const Chat = () => {
-    const { userMessage, setUserMessage, chatLog, isContentReplaced, setIsContentReplaced, loading, setLoading, sendMessage } = useChatStore();
+    const { userMessage, setUserMessage, chatLog, isContentReplaced, setIsContentReplaced, loading, sendMessage } = useChatStore();
 
   const handleMessage = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserMessage(e.target.value);
@@ -25,7 +25,7 @@ const Chat = () => {
         {!isContentReplaced ? (
           <div className="justify-between flex flex-col lg:min-h-[80vh] xl:min-h-[85vh] max-w-[80vw] overflow-hidden">
             <div className="mx-auto w-fit left-0 right-0 -top-32 absolute">
-                <Banner />
+                <Banner text="Happy Late Night Segun" />
             </div>
             <div className="mt-48 overflow-hidden">
             <ChatQuestions
