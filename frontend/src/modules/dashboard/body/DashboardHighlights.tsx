@@ -38,6 +38,8 @@ const DashboardHighlights = ({ loading, loadingBlog, key, title, text, category 
           spaceBetween={20}
           slidesPerView={1.1}
           pagination={{ clickable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log('slide change')}
           className="flex "
         >
           <SwiperSlide>

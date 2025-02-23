@@ -11,7 +11,7 @@ const GoalCheckbox: React.FC<GoalCheckboxProps> = ({ label, data }) => {
     setUserGoal(e.target.value);
   };
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(userGoal);
+    console.log(userGoal);
   }, [userGoal]);
 
   return (

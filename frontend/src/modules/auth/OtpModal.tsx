@@ -40,11 +40,11 @@ const OtpModal = () => {
                 })
             // toast.info('Verifying code...');
             // const resp = await axiosKonsumeInstance.get(`/api/VerificationCode/VerifyCode/${data.pin}/${Cookies.get("userid")}`);
-            // if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(resp);
+            // console.log(resp);
             // toast.success(resp.data.message);
             route.push('/auth/login');
           } catch (error: any) {
-            if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.error(error);
+            console.error(error);
             toast.error(error.response.data.title);
           }
     }

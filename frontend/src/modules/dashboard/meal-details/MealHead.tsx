@@ -45,7 +45,7 @@ const MealHead = () => {
 
   const makeRequest = async () => {
     try {
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log("hii");
+      console.log("hii");
       const { data } = await gemini.post("/gemini-pro:generateContent", {
         contents: [{ parts: [{ text: query }] }],
       });
@@ -54,18 +54,18 @@ const MealHead = () => {
       });
       setAnswer(data.candidates[0].content.parts[0].text);
       setAnswer1(calory.data.candidates[0].content.parts[0].text);
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(data);
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log("done");
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(query);
+      console.log(data);
+      console.log("done");
+      console.log(query);
     } catch (error) {
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.error(error);
+      console.error(error);
     }
   };
 
   const textForUserGoal = dashboardhero
     .filter(({ title }) => title == userGoal)
     .map(({ text }) => text);
-  if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(textForUserGoal);
+  console.log(textForUserGoal);
 
   return (
     <div className="font-satoshi bg-[#8C77EC] p-5 mt-7 rounded-2xl dashboardhead">

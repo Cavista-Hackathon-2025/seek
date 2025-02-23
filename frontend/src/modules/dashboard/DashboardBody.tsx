@@ -76,8 +76,29 @@ const DashboardBody = () => {
 
       </div>
       <div className="md:flex-[.5] md:hidden md:min-w-fit min-w-full mt-4">
+        {loadingBlog ? (
           <DashboardBlogSkeleton />
+        ) : (<BlogCard id={randomBlog?.id} key={randomBlog?.id} title={randomBlog?.title} text={randomBlog?.text} category={randomBlog?.category} showHeading />)
+        }
+
       </div>
+      {/* <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      spaceBetween={50}
+      slidesPerView={3}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+      <SwiperSlide>Slide 4</SwiperSlide>
+      ...
+    </Swiper> */}
       <DashboardMeals
         breakfast={breakfast}
         lunch={lunch}
