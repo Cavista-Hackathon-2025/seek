@@ -47,7 +47,7 @@ export function ChatBotContextProvider({ children }: { children: React.ReactNode
 // }
 
   const sendMessage = async (e: any) => {
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(userMessage);
+      console.log(userMessage);
       e.preventDefault();
     if (chatLog.length < 1) {
       setIsContentReplaced(true)
@@ -59,7 +59,7 @@ export function ChatBotContextProvider({ children }: { children: React.ReactNode
       { user: "me", message: userMessage },
     ]);
     // setUserMessage("");
-    if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(userMessage);
+    console.log(userMessage);
     setUserMessage('')
     try {
       setIsLoading(prev => !prev);
@@ -69,7 +69,7 @@ export function ChatBotContextProvider({ children }: { children: React.ReactNode
           request: userMessage
         }
       });
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(data);
+      console.log(data);
       
     //   const chatSession = model.startChat({
     //     generationConfig,
@@ -80,7 +80,7 @@ export function ChatBotContextProvider({ children }: { children: React.ReactNode
     //   });
     
     //   const result = await chatSession.sendMessage(`${userMessage}, i wan to ${userGoal} and i suffer from ${possibleDiseases}`);
-    //   if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(result.response.text());
+    //   console.log(result.response.text());
 
 
       // const response = result.response.text()
@@ -93,12 +93,12 @@ export function ChatBotContextProvider({ children }: { children: React.ReactNode
       ]);
       setIsLoading(false)
       
-      // if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(data.candidates[0]);
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(userMessage);
+      // console.log(data.candidates[0]);
+      console.log(userMessage);
     } catch (error: any) {
       toast.error(error);
     }
-    if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(chatLog);
+    console.log(chatLog);
     if (containerRef.current) {
       containerRef.current.scrollTop = containerRef.current.scrollHeight;
     }
@@ -109,7 +109,7 @@ export function ChatBotContextProvider({ children }: { children: React.ReactNode
     };
   
     if (userMessage) {
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log('Updated userMessage:', userMessage); // This will log the updated state
+      console.log('Updated userMessage:', userMessage); // This will log the updated state
   
       if (chatLog.length === 0) {
         document.addEventListener('click', handleClick);

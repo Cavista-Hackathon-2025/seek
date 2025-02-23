@@ -25,7 +25,7 @@ export function MealsContextProvider({
   const { getProfileID } = useUserContext();
 
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log("hi");
+    console.log("hi");
 
     const fetchMeals = async () => {
       try {
@@ -36,16 +36,16 @@ export function MealsContextProvider({
             params: { profileId: await getProfileID() },
           }
         );
-        if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log("fetching meals");
+        console.log("fetching meals");
 
         setRecommendedMeals(data.$values);
         setTempMeals(data.$values);
         const today = new Date().toISOString().split("T")[0];
         if (data.$values.length < 2) {
-          if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log("Retrying due to insufficient meal data...");
+          console.log("Retrying due to insufficient meal data...");
           await retry(fetchMeals, 3, 10000);
         } else {
-          if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log("Meals fetched successfully:", data.$values);
+          console.log("Meals fetched successfully:", data.$values);
           if (typeof window !== "undefined") {
             localStorage.setItem(
               "recommendedMeals",
@@ -54,16 +54,16 @@ export function MealsContextProvider({
           }
         }
         setLoadingMeal(false);
-        if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log("fetched meals");
+        console.log("fetched meals");
         localStorage.setItem("lastFetchDate", today);
       } catch (error) {
-        if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.error("Fetch Meals Error:", error);
+        console.error("Fetch Meals Error:", error);
         localStorage.removeItem("lastFetchDate");
       }
     };
 
     const checkAndFetchMeals = async () => {
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log("meal fetch text");
+      console.log("meal fetch text");
 
       if (typeof window !== "undefined") {
         setLoadingMeal(true);
@@ -79,7 +79,7 @@ export function MealsContextProvider({
           setRecommendedMeals(cachedMeals);
           setTempMeals(cachedMeals);
           setLoadingMeal(false);
-          if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(recommendedMeals);
+          console.log(recommendedMeals);
         }
       }
 

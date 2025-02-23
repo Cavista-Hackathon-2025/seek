@@ -28,7 +28,7 @@ interface UserContextProps {
     streakCount: number;
     profileID: number | undefined;
     getProfileDetails: () => void;
-    getProfileID: () => Promise<number | undefined>;
+    getProfileID: () => void;
 }
 const UserContext = createContext<UserContextProps | undefined>(undefined);
 
@@ -64,13 +64,13 @@ export const UserProvider: React.FC<any> = ({ children }) => {
         setUsername(data.fullName);
         setEmail(data.email);
 
-        if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(username);
+        console.log(username);
       } else {
         setUsername("");
       }
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(data);
+      console.log(data);
     } catch (error) {
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(error);
+      console.log(error);
       setUsername("");
     }
   };
@@ -87,7 +87,7 @@ export const UserProvider: React.FC<any> = ({ children }) => {
           },
         }
       );
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(data);
+      console.log(data);
       const formattedDate = formatDateToDDMMYY(data.value.dateOfBirth);
       setNationality(data.value.nationality);
       setWeight(data.value.weight);
@@ -100,10 +100,10 @@ export const UserProvider: React.FC<any> = ({ children }) => {
       setUserGoals(data.value.userGoals.$values);
       setAllergies(data.value.allergies.$values);
       setDOB(formattedDate);
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(userGoals);
+      console.log(userGoals);
       
     } catch (error) {
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(error);
+      console.log(error);
     }
   };
   const getStreakCount = async () => {
@@ -114,15 +114,15 @@ export const UserProvider: React.FC<any> = ({ children }) => {
          },
       });
       setStreakCount(data.streakCount)
-      // if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(data);
-      // if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(streakCount);
+      // console.log(data);
+      // console.log(streakCount);
       
     } catch (error) {
-      if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(error);
+      console.log(error);
       
     }
   }
-  const getProfileID = async (): Promise<number | undefined> => {
+  const getProfileID = async () => {
     try {
       
       const { data } = await axiosKonsumeInstance.get(`/api/Profile/ProfileByIdUserId`, {
@@ -134,10 +134,10 @@ export const UserProvider: React.FC<any> = ({ children }) => {
          },
       });
       setProfileID(data?.value);
-      // if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(data?.value);
+      // console.log(data?.value);
       return data?.value;
     } catch (error) {
-      // if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(error);
+      // console.log(error);
       
     }
   }

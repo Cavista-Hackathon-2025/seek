@@ -30,7 +30,7 @@ export function ScannerContextProvider({ children }: { children: React.ReactNode
     );
   
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(userGoals);
+    console.log(userGoals);
     setQueryText(`Whats in this image? Is it a food? What is in this food? with my information like my goal of ${userGoals}, health conditions  ${allergies} if this is not a food say this is not an image of a food`)
   }, [pathname])
   
@@ -44,9 +44,7 @@ export function ScannerContextProvider({ children }: { children: React.ReactNode
           .then((file: any) => {
             setImage(file);
           })
-          .catch((e) => {
-            if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(e)
-      });
+          .catch((e) => console.log(e));
   
         generativeFile(file).then((img: any) => {
           setBitImage(img);
@@ -85,12 +83,12 @@ export function ScannerContextProvider({ children }: { children: React.ReactNode
           const text = await response.text();
           setResult(text);
         } catch (error) {
-          if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.error("Error fetching result:", error);
+          console.error("Error fetching result:", error);
           setResult("");
         } finally {
           setLoading(prev => !prev);
         }
-        if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') console.log(queryText);
+        console.log(queryText);
       } else {
         toast.error("Input an image!");
       }
